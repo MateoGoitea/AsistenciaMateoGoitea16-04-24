@@ -13,11 +13,15 @@ int a=80;
 //Frente
 PImage frente;
 int distancia=60;
+//Nube
+PImage nube;
+int contN;
 
 public void setup(){
   size(400,600);
   fondo=loadImage("stage.png");
   frente=loadImage("sakura.png");
+  nube=loadImage("nube.png");
 }
 public void draw(){
   //Fondo
@@ -68,7 +72,12 @@ public void draw(){
     for (float sakuraX=0;sakuraX<width;sakuraX+=distancia){
         image(frente, sakuraX, 500);
     }
-
-
+    
+    //Nubes
+    
+    for (contN=0;contN<11;contN++){
+      image(nube, random(0,width), random(0,height));
+      
+    }
   
 }
