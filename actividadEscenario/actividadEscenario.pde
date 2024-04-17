@@ -1,16 +1,23 @@
+//Fondo
 PImage fondo;
 color rosa = color(255,88,213);
 color celeste = color(88,255,245);
+//Reimu
 int reimuX = 200;
 int reimuY = 500;
+//Cirno
 int cirnoX;
 int cirnoY = 100;
 int x=1;
 int a=80;
+//Frente
+PImage frente;
+int distancia=60;
 
 public void setup(){
   size(400,600);
   fondo=loadImage("stage.png");
+  frente=loadImage("sakura.png");
 }
 public void draw(){
   //Fondo
@@ -20,6 +27,7 @@ public void draw(){
   image(fondo,width*0.33,0,width,height);
   tint(celeste);
   image(fondo,width*0.66,0,width,height);
+  noTint();
   
   //Reimu
   if(keyPressed && (key==CODED)){
@@ -55,5 +63,12 @@ public void draw(){
     }
     ellipse(cirnoX+a,cirnoY,10,10);
     
+   //Frente
    
+    for (float sakuraX=0;sakuraX<width;sakuraX+=distancia){
+        image(frente, sakuraX, 500);
+    }
+
+
+  
 }
