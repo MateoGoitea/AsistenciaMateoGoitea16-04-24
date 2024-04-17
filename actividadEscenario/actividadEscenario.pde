@@ -3,9 +3,11 @@ PImage fondo;
 color rosa = color(255,88,213);
 color celeste = color(88,255,245);
 //Reimu
+PImage reimu;
 int reimuX = 200;
 int reimuY = 500;
 //Cirno
+PImage cirno;
 int cirnoX;
 int cirnoY = 100;
 int x=1;
@@ -22,6 +24,8 @@ public void setup(){
   fondo=loadImage("stage.png");
   frente=loadImage("sakura.png");
   nube=loadImage("nube.png");
+  reimu=loadImage("reimu.png");
+  cirno=loadImage("cirno.gif");
 }
 public void draw(){
   //Fondo
@@ -48,8 +52,8 @@ public void draw(){
       reimuY=reimuY+5;
     }
   }
-  fill(255,0,0);
-  ellipse(reimuX,reimuY,10,10);
+  
+  image(reimu,reimuX,reimuY);
   
   //Cirno
   
@@ -65,7 +69,7 @@ public void draw(){
     if(cirnoX<=0){
       a=80;
     }
-    ellipse(cirnoX+a,cirnoY,10,10);
+    image(cirno,cirnoX+a,cirnoY);
     
    //Frente
    
@@ -76,8 +80,7 @@ public void draw(){
     //Nubes
     
     for (contN=0;contN<11;contN++){
-      image(nube, random(0,width), random(0,height));
-      
+      image(nube, random(0,width), random(0,height)); 
     }
   
 }
