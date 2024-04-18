@@ -2,11 +2,7 @@ private Fondo fondo;
 private Reimu reimu;
 private Cirno cirno;
 private Frente frente;
-
-//Nube
-PImage nube;
-float nubeX, nubeY;
-
+private Nube nube;
 
 public void setup(){
   size(400,600);
@@ -14,9 +10,7 @@ public void setup(){
   reimu = new Reimu();
   cirno = new Cirno();
   frente = new Frente();
-  nube=loadImage("nube.png");
-
-  
+  nube = new Nube();
 
 }
 public void draw(){
@@ -24,18 +18,7 @@ public void draw(){
   reimu.dibujarReimu();
   cirno.dibujarCirno();
   frente.dibujarFrente();
-   //Frente
-   
-    
-    
-    //Nubes
-    
-    nubeX=random(0,width);
-    nubeY=random(0,height);
-    for (int c=0;c<11;c++){
-      image(nube, nubeX , nubeY);
-    }
-    
+  nube.dibujarNube();  
 }
 
 public void keyPressed(){
