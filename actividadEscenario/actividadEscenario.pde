@@ -1,13 +1,8 @@
 private Fondo fondo;
 private Reimu reimu;
-//Reimu
+private Cirno cirno;
 
 
-//Cirno
-PImage cirno;
-int cirnoX;
-int cirnoY = 100;
-int a=5;
 //Frente
 PImage frente;
 int bloquealto=60;
@@ -22,25 +17,17 @@ public void setup(){
   size(400,600);
   fondo = new Fondo();
   reimu = new Reimu();
+  cirno = new Cirno();
   frente=loadImage("sakura.png");
   nube=loadImage("nube.png");
 
-  cirno=loadImage("cirno.gif");
+  
 
 }
 public void draw(){
   fondo.dibujarFondo();
   reimu.dibujarReimu();
-  
-
-  
-  //Cirno
-  image(cirno,cirnoX,cirnoY);
-  
-  if(cirnoX > width || cirnoX < 0){
-    a = -a;
-  }
-  cirnoX += a;
+  cirno.dibujarCirno();
     
    //Frente
    

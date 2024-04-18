@@ -4,7 +4,7 @@ class Fondo{
   private color celeste = color(88,255,245);
   
   public Fondo(){
-  fondo = loadImage("stage.png");
+    fondo = loadImage("stage.png");
   }
   
   public void dibujarFondo(){
