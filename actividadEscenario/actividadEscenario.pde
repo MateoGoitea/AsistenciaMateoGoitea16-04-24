@@ -1,9 +1,8 @@
 private Fondo fondo;
+private Reimu reimu;
 //Reimu
-PImage reimu;
-int reimuX = 200;
-int reimuY = 500;
-int reimuvel=5;
+
+
 //Cirno
 PImage cirno;
 int cirnoX;
@@ -22,33 +21,18 @@ float nubeX, nubeY;
 public void setup(){
   size(400,600);
   fondo = new Fondo();
+  reimu = new Reimu();
   frente=loadImage("sakura.png");
   nube=loadImage("nube.png");
-  reimu=loadImage("reimu.png");
+
   cirno=loadImage("cirno.gif");
 
 }
 public void draw(){
   fondo.dibujarFondo();
+  reimu.dibujarReimu();
   
-  
-  //Reimu
-  if(keyPressed && (key==CODED)){
-    if (keyCode==RIGHT){
-      reimuX=reimuX+reimuvel;
-    }
-    if (keyCode==LEFT){
-      reimuX=reimuX-reimuvel;
-    }
-    if (keyCode==UP){
-      reimuY=reimuY-reimuvel;
-    }
-    if (keyCode==DOWN){
-      reimuY=reimuY+reimuvel;
-    }
-  }
-  
-  image(reimu,reimuX,reimuY);
+
   
   //Cirno
   image(cirno,cirnoX,cirnoY);
@@ -74,3 +58,19 @@ public void draw(){
     }
     
 }
+
+public void keyPressed(){
+    if (keyCode==RIGHT){
+      reimu.moverReimu(0);
+    }
+    if (keyCode==LEFT){
+      reimu.moverReimu(1);
+    }
+    if (keyCode==UP){
+      reimu.moverReimu(2);
+    }
+    if (keyCode==DOWN){
+      reimu.moverReimu(3);
+    }
+  }
+ 
