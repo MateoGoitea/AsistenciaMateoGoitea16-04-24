@@ -6,6 +6,7 @@ color celeste = color(88,255,245);
 PImage reimu;
 int reimuX = 200;
 int reimuY = 500;
+int reimuvel=5;
 //Cirno
 PImage cirno;
 int cirnoX;
@@ -18,7 +19,8 @@ int bloqueancho=60;
 int distancia=60;
 //Nube
 PImage nube;
-int contN;
+float nubeX, nubeY;
+
 
 public void setup(){
   size(400,600);
@@ -42,16 +44,16 @@ public void draw(){
   //Reimu
   if(keyPressed && (key==CODED)){
     if (keyCode==RIGHT){
-      reimuX=reimuX+5;
+      reimuX=reimuX+reimuvel;
     }
     if (keyCode==LEFT){
-      reimuX=reimuX-5;
+      reimuX=reimuX-reimuvel;
     }
     if (keyCode==UP){
-      reimuY=reimuY-5;
+      reimuY=reimuY-reimuvel;
     }
     if (keyCode==DOWN){
-      reimuY=reimuY+5;
+      reimuY=reimuY+reimuvel;
     }
   }
   
@@ -73,8 +75,11 @@ public void draw(){
     }
     
     //Nubes
-      for (contN=0;contN<11;contN++){
-        image(nube, random(0,width), random(0,height)); 
-      }
+    
+    nubeX=random(0,width);
+    nubeY=random(0,height);
+    for (int c=0;c<11;c++){
+      image(nube, nubeX , nubeY);
     }
-  
+    
+}
