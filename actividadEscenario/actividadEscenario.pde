@@ -1,7 +1,4 @@
-//Fondo
-PImage fondo;
-color rosa = color(255,88,213);
-color celeste = color(88,255,245);
+private Fondo fondo;
 //Reimu
 PImage reimu;
 int reimuX = 200;
@@ -24,7 +21,7 @@ float nubeX, nubeY;
 
 public void setup(){
   size(400,600);
-  fondo=loadImage("stage.png");
+  fondo = new Fondo();
   frente=loadImage("sakura.png");
   nube=loadImage("nube.png");
   reimu=loadImage("reimu.png");
@@ -32,14 +29,8 @@ public void setup(){
 
 }
 public void draw(){
-  //Fondo
-  tint(rosa);
-  image(fondo,0,0,width,height);
-  noTint();
-  image(fondo,width*0.33,0,width,height);
-  tint(celeste);
-  image(fondo,width*0.66,0,width,height);
-  noTint();
+  fondo.dibujarFondo();
+  
   
   //Reimu
   if(keyPressed && (key==CODED)){
