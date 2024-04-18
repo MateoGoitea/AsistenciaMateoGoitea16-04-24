@@ -1,13 +1,8 @@
 private Fondo fondo;
 private Reimu reimu;
 private Cirno cirno;
+private Frente frente;
 
-
-//Frente
-PImage frente;
-int bloquealto=60;
-int bloqueancho=60;
-int distancia=60;
 //Nube
 PImage nube;
 float nubeX, nubeY;
@@ -18,7 +13,7 @@ public void setup(){
   fondo = new Fondo();
   reimu = new Reimu();
   cirno = new Cirno();
-  frente=loadImage("sakura.png");
+  frente = new Frente();
   nube=loadImage("nube.png");
 
   
@@ -28,13 +23,10 @@ public void draw(){
   fondo.dibujarFondo();
   reimu.dibujarReimu();
   cirno.dibujarCirno();
-    
+  frente.dibujarFrente();
    //Frente
    
-    for (float bloqueX=0;bloqueX<width;bloqueX+=distancia){
-      fill(255,44,107);
-        rect(bloqueX,height-bloquealto,bloqueancho,bloquealto);
-    }
+    
     
     //Nubes
     
