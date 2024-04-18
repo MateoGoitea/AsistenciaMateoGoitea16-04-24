@@ -10,8 +10,7 @@ int reimuY = 500;
 PImage cirno;
 int cirnoX;
 int cirnoY = 100;
-int x=1;
-int a=80;
+int a=10;
 //Frente
 PImage frente;
 int distancia=60;
@@ -56,20 +55,13 @@ public void draw(){
   image(reimu,reimuX,reimuY);
   
   //Cirno
+  image(cirno,cirnoX,cirnoY);
   
-  for (int c=0;c<1;c++){
-    cirnoX=cirnoX+x;
+  if(cirnoX > width || cirnoX < 0){
+    a = -a;
   }
-    if (cirnoX>=width||cirnoX<=0){
-    x=x*-1;
-    }
-    if(cirnoX>=width){
-      a=-80;
-    }
-    if(cirnoX<=0){
-      a=80;
-    }
-    image(cirno,cirnoX+a,cirnoY);
+  cirnoX += a;
+    
     
    //Frente
    
