@@ -10,9 +10,11 @@ int reimuY = 500;
 PImage cirno;
 int cirnoX;
 int cirnoY = 100;
-int a=10;
+int a=5;
 //Frente
 PImage frente;
+int bloquealto=60;
+int bloqueancho=60;
 int distancia=60;
 //Nube
 PImage nube;
@@ -25,6 +27,7 @@ public void setup(){
   nube=loadImage("nube.png");
   reimu=loadImage("reimu.png");
   cirno=loadImage("cirno.gif");
+
 }
 public void draw(){
   //Fondo
@@ -62,17 +65,16 @@ public void draw(){
   }
   cirnoX += a;
     
-    
    //Frente
    
-    for (float sakuraX=0;sakuraX<width;sakuraX+=distancia){
-        image(frente, sakuraX, 500);
+    for (float bloqueX=0;bloqueX<width;bloqueX+=distancia){
+      fill(255,44,107);
+        rect(bloqueX,height-bloquealto,bloqueancho,bloquealto);
     }
     
     //Nubes
-    
-    for (contN=0;contN<11;contN++){
-      image(nube, random(0,width), random(0,height)); 
+      for (contN=0;contN<11;contN++){
+        image(nube, random(0,width), random(0,height)); 
+      }
     }
   
-}
