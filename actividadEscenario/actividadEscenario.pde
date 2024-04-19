@@ -11,15 +11,15 @@ public void setup(){
   cirno = new Cirno();
   frente = new Frente();
   nube = new Nube();
-
 }
 public void draw(){
   fondo.dibujarFondo();
   reimu.dibujarReimu();
   cirno.dibujarCirno();
   frente.dibujarFrente();
-  nube.dibujarNube();  
+  nube.dibujarNube();
 }
+
 
 public void keyPressed(){
     if (keyCode==RIGHT){
