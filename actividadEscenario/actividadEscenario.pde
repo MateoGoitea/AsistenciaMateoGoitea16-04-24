@@ -3,6 +3,9 @@ private Reimu reimu;
 private Cirno cirno;
 private Frente frente;
 private Nube nube;
+private Bullet bullet;
+
+
 
 public void setup(){
   size(400,600);
@@ -11,6 +14,7 @@ public void setup(){
   cirno = new Cirno();
   frente = new Frente();
   nube = new Nube();
+  bullet = new Bullet();
 }
 public void draw(){
   fondo.dibujarFondo();
@@ -18,8 +22,8 @@ public void draw(){
   cirno.dibujarCirno();
   frente.dibujarFrente();
   nube.dibujarNube();
+  bullet.dibujarBullet(); 
 }
-
 
 public void keyPressed(){
     if (keyCode==RIGHT){
