@@ -5,16 +5,33 @@ private Frente frente;
 private Nube nube;
 private Bullet bullet;
 
-
-
 public void setup(){
   size(400,600);
+  
   fondo = new Fondo();
+  fondo.setRosa(color(255,88,213));
+  fondo.setCeleste(color(88,255,245));
+  
   reimu = new Reimu();
+  reimu.setReimuX(200);
+  reimu.setReimuY(500);
+  reimu.setReimuvel(10);
+  
   cirno = new Cirno();
+  cirno.setCirnoY(100);
+  cirno.seta(5);
+  
   frente = new Frente();
+  frente.setBloquealto(60);
+  frente.setBloqueancho(60);
+  frente.setDistancia(60);
+  
   nube = new Nube();
+  
   bullet = new Bullet();
+  bullet.setBulletY(100);
+  bullet.setb(1);
+  
 }
 public void draw(){
   fondo.dibujarFondo();

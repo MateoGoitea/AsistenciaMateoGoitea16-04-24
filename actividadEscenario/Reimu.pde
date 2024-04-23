@@ -1,8 +1,8 @@
 class Reimu{
   private PImage reimu;
-  private int reimuX = 200;
-  private int reimuY = 500;
-  private int reimuvel=10;
+  private int reimuX;
+  private int reimuY;
+  private int reimuvel;
   
   public Reimu(){
     reimu = loadImage("reimu.png");
@@ -25,5 +25,26 @@ class Reimu{
     if (direccion==3){
       reimuY=reimuY+reimuvel; 
     }
+  }
+  
+  public int getReimuX(){
+    return this.reimuX;
+  }
+  public void setReimuX(int reimuX){
+    this.reimuX=reimuX;
+  }
+  
+  public int getReimuY(){
+    return this.reimuY;
+  }
+  public void setReimuY(int reimuY){
+    this.reimuY=reimuY;
+  }
+  
+  public int getReimuvel(){
+    return this.reimuvel;
+  }
+  public void setReimuvel(int reimuvel){
+    this.reimuvel=reimuvel;
   }
 }

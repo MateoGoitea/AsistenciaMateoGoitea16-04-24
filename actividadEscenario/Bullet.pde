@@ -1,5 +1,5 @@
 class Bullet{
-  private int bulletX, bulletY=100, b=1;
+  private int bulletX, bulletY, b;
   
   public void dibujarBullet(){
     fill(64,225,225);
@@ -16,5 +16,26 @@ class Bullet{
         bulletY=100;
       }
     }
+  }
+  
+  public int getBulletX(){
+    return this.bulletX;
+  }
+  public void setBulletX(int bulletX){
+    this.bulletX=bulletX;
+  }
+  
+  public int getBulletY(){
+    return this.bulletY;
+  }
+  public void setBulletY(int bulletY){
+    this.bulletY=bulletY;
+  }
+  
+  public int getb(){
+    return this.b;
+  }
+  public void setb(int b){
+    this.b=b;
   }
 }
